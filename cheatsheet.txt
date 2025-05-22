@@ -1,0 +1,6 @@
+debug:
+start a server to preview the page from host
+
+``` bash
+npx http-server -p 8080
+```
