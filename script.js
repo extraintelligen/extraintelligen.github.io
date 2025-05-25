@@ -1,5 +1,3 @@
-console.log('script.js loaded - NO hello world here!');
-
 function caesarDecrypt(text, shift = 3) {
     return text.split('').map(char => {
         if (char.match(/[a-z]/i)) {
@@ -14,7 +12,6 @@ function caesarDecrypt(text, shift = 3) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOMContentLoaded - script.js running');
     const inputBox = document.querySelector('.input-box');
     const submitBtn = document.querySelector('.submit-btn');
     const resultDiv = document.getElementById('result');
