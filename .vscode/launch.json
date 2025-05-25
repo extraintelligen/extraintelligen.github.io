@@ -12,7 +12,8 @@
                 "-p",
                 "8080",
                 "-o",
-                "-c-1"
+                "-c-1",
+                "--livereload"
             ],
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
