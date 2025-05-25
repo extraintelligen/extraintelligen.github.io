@@ -13,6 +13,25 @@
             height: 100vh;
             margin: 0;
             background-color: #f0f8ff;
+            overflow: hidden;
+        }
+        #grass-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            opacity: 0.8;
+        }
+        #three-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
         .subtext {
             font-size: 4rem;
@@ -26,6 +45,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            z-index: 1;
+            position: relative;
         }
         .input-box {
             padding: 12px 20px;
@@ -60,11 +81,31 @@
             font-size: 1.1rem;
             color: #2c3e50;
             text-align: center;
-            min-height: 30px;
+            min-height: 20px;
+            background-color: rgba(128, 128, 128, 0.3);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            min-width: 250px;
+            display: none;
+        }
+        #blue-mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(23, 49, 75, 0.35);
+            z-index: -1;
+            pointer-events: none;
         }
     </style>
 </head>
 <body>
+    <img id="grass-background" src="wind.gif" alt="Grass field with wind">
+    <div id="blue-mask"></div>
+    <canvas id="three-canvas"></canvas>
     <div class="content-wrapper">
         <div class="subtext">guess the email</div>
         <input type="text" class="input-box" placeholder="Enter your guess...">
@@ -72,6 +113,7 @@
         <div id="result" class="result-display"></div>
 
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js?t=20250524"></script>
 </body>
 </html>
